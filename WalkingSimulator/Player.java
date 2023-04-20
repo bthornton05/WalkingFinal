@@ -7,13 +7,19 @@ public class Player {
     public int getPlayerHealth(){ //Accessor and mutator methods for player
         return playerHealth;
     }
-    public void setPlayerHealth(int h){
-        playerHealth = h;
+    public void addPlayerHealth(){
+        playerHealth ++;
+    }
+    public void subtractPlayerHealth(){
+        playerHealth--;
     }
     public int getPlayerScore(){
         return playerScore;
     }
-    public void setPlayerScore(int s){
-        playerScore = s;
+    public void addPlayerScore(){
+        playerHealth ++;
+    }
+    public void subtractPlayerScore(){
+        playerHealth--;
     }
 }

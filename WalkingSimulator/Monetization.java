@@ -1,6 +1,6 @@
 package WalkingSimulator;
 import java.util.Scanner;
-public class Monetization {
+public class Monetization{
     private static int creditCardNumber;
     private static String expDate;
     private static int ccv;
@@ -21,5 +21,17 @@ public class Monetization {
         System.out.println("Thank you, your information is:  \n Number: " + creditCardNumber + "\nExpiration Date: " + expDate + "\nCCV: " + ccv);
         System.out.println("Your mother's maiden name is " + name);
         sc.close();
+    }
+    public int getCCC(){
+        return creditCardNumber;
+    }
+    public String getExpDate(){
+        return expDate;
+    }
+    public int getCCV(){
+        return ccv;
+    }
+    public String getName(){
+        return name;
     }
 }
