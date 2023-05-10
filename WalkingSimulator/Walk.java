@@ -152,6 +152,7 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row][enemy1Col + 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy1Col < playerCol){
@@ -168,6 +169,7 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row][enemy1Col - 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         if(enemy1Row > playerRow){
@@ -184,6 +186,7 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row + 1][enemy1Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy1Row < playerRow){
@@ -200,6 +203,7 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row - 1][enemy1Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
     }
@@ -218,6 +222,7 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row][enemy2Col + 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy2Col < playerCol){
@@ -234,6 +239,7 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row][enemy2Col - 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         if(enemy2Row > playerRow){
@@ -250,6 +256,7 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row + 1][enemy2Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy2Row < playerRow){
@@ -266,6 +273,7 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row - 1][enemy2Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
     }
@@ -284,6 +292,7 @@ private boolean secret = false;
                 board[enemy3Row][enemy3Col] = 'P';
                 board[enemy3Row][enemy3Col + 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy3Col < playerCol){
@@ -300,6 +309,7 @@ private boolean secret = false;
                 board[enemy3Row][enemy3Col] = 'P';
                 board[enemy3Row][enemy3Col - 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         if(enemy3Row > playerRow){
@@ -316,6 +326,7 @@ private boolean secret = false;
                 board[enemy3Row][enemy3Col] = 'P';
                 board[enemy3Row + 1][enemy3Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy3Row < playerRow){
@@ -332,6 +343,7 @@ private boolean secret = false;
                 board[enemy3Row][enemy3Col] = 'P';
                 board[enemy3Row - 1][enemy3Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
     }
@@ -350,6 +362,7 @@ private boolean secret = false;
                 board[enemy4Row][enemy4Col] = 'P';
                 board[enemy4Row][enemy4Col + 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy4Col < playerCol){
@@ -366,6 +379,7 @@ private boolean secret = false;
                 board[enemy4Row][enemy4Col] = 'P';
                 board[enemy4Row][enemy4Col - 1] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         if(enemy4Row > playerRow){
@@ -382,6 +396,7 @@ private boolean secret = false;
                 board[enemy4Row][enemy4Col] = 'P';
                 board[enemy4Row + 1][enemy4Col] = 'W';
             }
+            System.out.println("\033[H\033[2J" + bufferText); //Clears text
             printBoard();
         }
         else if(enemy4Row < playerRow){
