@@ -1,49 +1,85 @@
 package WalkingSimulator;
 import java.lang.Package;
-public class Events {
+import java.util.Scanner;
+public class Events extends textScroller{
     public void dwayneTheRockJohnson(){
         Player player = Walker.player;
-        recursionText(0, "Dwayne");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("pp?");
+        if(sc.next().equals("pp")){
+            recursionText(0, "Dwayne");
+        }
         player.subtractPlayerHealth();
-        System.out.println("Player Health: " + player.getPlayerHealth());
+        recursionText(0,"Player Health: " + player.getPlayerHealth());
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+            System.exit(-1);
+        }
     }
     public void jonahWolk(){
         Player player = Walker.player;
-        recursionText(0, "Jonah Wolk");
+        Scanner sc = new Scanner(System.in);
+        recursionText(0,"pp?");
+        if(sc.next().equals("pp")){
+         recursionText(0, "Jonah Wolk");
+        }
         player.subtractPlayerHealth();
-        System.out.println("Player Health: " + player.getPlayerHealth());
+        recursionText(0,"Player Health: " + player.getPlayerHealth());
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+            System.exit(-1);
+        }
     }
     public void tylerBlevins(){
         Player player = Walker.player;
-        recursionText(0, "Tyler Blevins");
+        Scanner sc = new Scanner(System.in);
+        recursionText(0,"pp?");
+        if(sc.next().equals("pp")){
+            recursionText(0, "Tyler Blevins");
+        }
         player.subtractPlayerHealth();
-        System.out.println("Player Health: " + player.getPlayerHealth());
+        recursionText(0,"Player Health: " + player.getPlayerHealth());
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+            System.exit(-1);
+        }
     }
     public void backPackKid(){
         Player player = Walker.player;
-        recursionText(0, "Backpack Kid");
+        Scanner sc = new Scanner(System.in);
+        recursionText(0,"pp?");
+        if(sc.next().equals("pp")){
+            recursionText(0, "Backpack Kid");
+        }
         player.subtractPlayerHealth();
-        System.out.println("Player Health: " + player.getPlayerHealth());
+        recursionText(0,"Player Health: " + player.getPlayerHealth());
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
+            System.exit(-1);
+        }
     }
     public void mrBeast(){
         Player player = Walker.player;
-        recursionText(0, "Mr. Beast");
+        Scanner sc = new Scanner(System.in);
+        recursionText(0,"pp?");
+        if(sc.next().equals("pp")){
+            recursionText(0, "Mr. Beast");
+        }
         player.subtractPlayerHealth();
-        System.out.println("Player Health: " + player.getPlayerHealth());
-    }
-    public String recursionText(int num, String str){//Recursion method, always set num to 0
-        try {
-            Thread.sleep(50);
-        } catch (InterruptedException e) {
+        recursionText(0,"Player Health: " + player.getPlayerHealth());
+        try{
+            Thread.sleep(1000);
+        }
+        catch(Exception e){
             System.exit(-1);
         }
-        System.out.print(str.substring(num, num + 1));
-        num++;
-        if(num == str.length())
-        {
-            System.out.println();
-            return "";
-        }
-        return recursionText(num, str);
     }
 }

@@ -14,7 +14,7 @@ public class BattlePass extends Monetization{
     }
     public void purchase(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Would you like to purchase the Battle Pass for $9.99? y/n");
+        recursionText(0,"Would you like to purchase the Battle Pass for $9.99? y/n");
         if(sc.next().equals("y")){
             hasBattlePass = true;
         }
