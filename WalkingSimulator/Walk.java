@@ -133,6 +133,11 @@ private boolean secret = false;
             System.exit(-1);
         }
         //Enemy movement
+        int chance1 = (int)(Math.random()*10 + 1); //Random chances for enemies to move, moves when even number
+        int chance2 = (int)(Math.random()*10 + 1);
+        int chance3 = (int)(Math.random()*10 + 1);
+        int chance4 = (int)(Math.random()*10 + 1);
+        if(chance1 % 2 == 0){
         if(enemy1Col > playerCol){ //Enemy1 movement
             enemy1Col--;
             if((enemy1Col == playerCol) && (enemy1Row == playerRow)){
@@ -197,6 +202,8 @@ private boolean secret = false;
             }
             printBoard();
         }
+    }
+    if(chance2 % 2 == 0){
         if(enemy2Col > playerCol){ //Enemy2 movement
             enemy2Col--;
             if((enemy2Col == playerCol) && (enemy2Row == playerRow)){
@@ -261,6 +268,8 @@ private boolean secret = false;
             }
             printBoard();
         }
+    }
+    if(chance3 % 2 == 0){
         if(enemy3Col > playerCol){ //Enemy3 movement
             enemy3Col--;
             if((enemy3Col == playerCol) && (enemy3Row == playerRow)){
@@ -325,6 +334,8 @@ private boolean secret = false;
             }
             printBoard();
         }
+    }
+    if(chance4 % 2 == 0){
         if(enemy4Col > playerCol){ //Enemy4 movement
             enemy4Col--;
             if((enemy4Col == playerCol) && (enemy4Row == playerRow)){
@@ -389,6 +400,7 @@ private boolean secret = false;
             }
             printBoard();
         }
+    }
         System.out.println("\033[H\033[2J" + bufferText); //Clears text
         printBoard(); //Prints board after move
         }
