@@ -5,7 +5,7 @@ public class Monetization extends textScroller{
     private static String expDate;
     private static int ccv;
     private static String name;
-    public void Monetize(){
+    public void monetize(){
         Scanner sc = new Scanner(System.in);
         recursionText(0,"Please enter your information");
         recursionText(0,"Credit Card Number: ");
@@ -18,7 +18,10 @@ public class Monetization extends textScroller{
         ccv = sc.nextInt();
         recursionText(0,"What is your mother's maiden name?: ");
         name = sc.next();
-        recursionText(0,"Thank you, your information is:  \n Number: " + creditCardNumber + "\nExpiration Date: " + expDate + "\nCCV: " + ccv);
+        recursionText(0,"Thank you, your information is: ");
+        recursionText(0,"Number: " + creditCardNumber);
+        recursionText(0,"Expiration Date: " + expDate);
+        recursionText(0, + "CCV: " + ccv);
         recursionText(0,"Your mother's maiden name is " + name);
         sc.close();
     }

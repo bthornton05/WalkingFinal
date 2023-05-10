@@ -137,10 +137,13 @@ private boolean secret = false;
         int chance2 = (int)(Math.random()*10 + 1);
         int chance3 = (int)(Math.random()*10 + 1);
         int chance4 = (int)(Math.random()*10 + 1);
+        boolean touched = false; //Used for checking if an event has triggered
         if(chance1 % 2 == 0){
         if(enemy1Col > playerCol){ //Enemy1 movement
             enemy1Col--;
             if((enemy1Col == playerCol) && (enemy1Row == playerRow)){
+                if(touched == false){ //Checks if player has been touched, if not, random event, otherwise resets piece
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy1Row][enemy1Col + 1] = 'W';
                 enemy1Row = 0;
@@ -148,6 +151,13 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy1Row][enemy1Col + 1] = 'W';
+                enemy1Row = 0;
+                enemy1Col = 0;
+                board[enemy1Row][enemy1Col] = 'P';
+            }
+        }
             else{
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row][enemy1Col + 1] = 'W';
@@ -158,12 +168,21 @@ private boolean secret = false;
         else if(enemy1Col < playerCol){
             enemy1Col++;
             if((enemy1Col == playerCol) && (enemy1Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy1Row][enemy1Col - 1] = 'W';
                 enemy1Row = 0;
                 enemy1Col = 0;
                 board[enemy1Row][enemy1Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy1Row][enemy1Col - 1] = 'W';
+                    enemy1Row = 0;
+                    enemy1Col = 0;
+                    board[enemy1Row][enemy1Col] = 'P';
+                }
             }
             else{
                 board[enemy1Row][enemy1Col] = 'P';
@@ -175,12 +194,21 @@ private boolean secret = false;
         if(enemy1Row > playerRow){
             enemy1Row --;
             if((enemy1Col == playerCol) && (enemy1Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy1Row + 1][enemy1Col] = 'W';
                 enemy1Row = 0;
                 enemy1Col = 0;
                 board[enemy1Row][enemy1Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy1Row + 1][enemy1Col] = 'W';
+                    enemy1Row = 0;
+                    enemy1Col = 0;
+                    board[enemy1Row][enemy1Col] = 'P';
+                }
             }
             else{
                 board[enemy1Row][enemy1Col] = 'P';
@@ -192,6 +220,8 @@ private boolean secret = false;
         else if(enemy1Row < playerRow){
             enemy1Row++;
             if((enemy1Col == playerCol) && (enemy1Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy1Row - 1][enemy1Col - 1] = 'W';
                 enemy1Row = 0;
@@ -199,6 +229,13 @@ private boolean secret = false;
                 board[enemy1Row][enemy1Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy1Row - 1][enemy1Col - 1] = 'W';
+                enemy1Row = 0;
+                enemy1Col = 0;
+                board[enemy1Row][enemy1Col] = 'P';
+            }
+        }
             else{
                 board[enemy1Row][enemy1Col] = 'P';
                 board[enemy1Row - 1][enemy1Col] = 'W';
@@ -211,6 +248,8 @@ private boolean secret = false;
         if(enemy2Col > playerCol){ //Enemy2 movement
             enemy2Col--;
             if((enemy2Col == playerCol) && (enemy2Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy2Row][enemy2Col + 1] = 'W';
                 enemy2Row = 8;
@@ -218,6 +257,13 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy2Row][enemy2Col + 1] = 'W';
+                enemy2Row = 8;
+                enemy2Col = 0;
+                board[enemy2Row][enemy2Col] = 'P';
+            }
+        }
             else{
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row][enemy2Col + 1] = 'W';
@@ -228,6 +274,8 @@ private boolean secret = false;
         else if(enemy2Col < playerCol){
             enemy2Col++;
             if((enemy2Col == playerCol) && (enemy2Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy2Row][enemy2Col - 1] = 'W';
                 enemy2Row = 8;
@@ -235,6 +283,13 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy2Row][enemy2Col - 1] = 'W';
+                enemy2Row = 8;
+                enemy2Col = 0;
+                board[enemy2Row][enemy2Col] = 'P';
+            }
+        }
             else{
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row][enemy2Col - 1] = 'W';
@@ -245,12 +300,21 @@ private boolean secret = false;
         if(enemy2Row > playerRow){
             enemy2Row --;
             if((enemy2Col == playerCol) && (enemy2Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy2Row + 1][enemy2Col] = 'W';
-                enemy2Row = 8;
-                enemy2Col = 0;
-                board[enemy2Row][enemy2Col] = 'P';
+                    enemy2Row = 8;
+                    enemy2Col = 0;
+                    board[enemy2Row][enemy2Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy2Row + 1][enemy2Col] = 'W';
+                    enemy2Row = 8;
+                    enemy2Col = 0;
+                    board[enemy2Row][enemy2Col] = 'P';
+                }
             }
             else{
                 board[enemy2Row][enemy2Col] = 'P';
@@ -262,6 +326,8 @@ private boolean secret = false;
         else if(enemy2Row < playerRow){
             enemy2Row++;
             if((enemy2Col == playerCol) && (enemy2Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy2Row - 1][enemy2Col] = 'W';
                 enemy2Row = 8;
@@ -269,6 +335,13 @@ private boolean secret = false;
                 board[enemy2Row][enemy2Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy2Row - 1][enemy2Col] = 'W';
+                enemy2Row = 8;
+                enemy2Col = 0;
+                board[enemy2Row][enemy2Col] = 'P';
+            }
+        }
             else{
                 board[enemy2Row][enemy2Col] = 'P';
                 board[enemy2Row - 1][enemy2Col] = 'W';
@@ -281,6 +354,8 @@ private boolean secret = false;
         if(enemy3Col > playerCol){ //Enemy3 movement
             enemy3Col--;
             if((enemy3Col == playerCol) && (enemy3Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy3Row][enemy3Col + 1] = 'W';
                 enemy3Row = 0;
@@ -288,6 +363,13 @@ private boolean secret = false;
                 board[enemy3Row][enemy3Col] = 'P';
                 randomEvent();
             }
+            else{
+                board[enemy3Row][enemy3Col + 1] = 'W';
+                enemy3Row = 0;
+                enemy3Col = 8;
+                board[enemy3Row][enemy3Col] = 'P';
+            }
+        }
             else{
                 board[enemy3Row][enemy3Col] = 'P';
                 board[enemy3Row][enemy3Col + 1] = 'W';
@@ -298,12 +380,21 @@ private boolean secret = false;
         else if(enemy3Col < playerCol){
             enemy3Col++;
             if((enemy3Col == playerCol) && (enemy3Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy3Row][enemy3Col - 1] = 'W';
                 enemy3Row = 0;
                 enemy3Col = 8;
                 board[enemy3Row][enemy3Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy3Row][enemy3Col - 1] = 'W';
+                    enemy3Row = 0;
+                    enemy3Col = 8;
+                    board[enemy3Row][enemy3Col] = 'P';
+                }
             }
             else{
                 board[enemy3Row][enemy3Col] = 'P';
@@ -315,12 +406,21 @@ private boolean secret = false;
         if(enemy3Row > playerRow){
             enemy3Row --;
             if((enemy3Col == playerCol) && (enemy3Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy3Row + 1][enemy3Col] = 'W';
                 enemy3Row = 0;
                 enemy3Col = 8;
                 board[enemy3Row][enemy3Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy3Row + 1][enemy3Col] = 'W';
+                    enemy3Row = 0;
+                    enemy3Col = 8;
+                    board[enemy3Row][enemy3Col] = 'P';
+                }
             }
             else{
                 board[enemy3Row][enemy3Col] = 'P';
@@ -332,12 +432,21 @@ private boolean secret = false;
         else if(enemy3Row < playerRow){
             enemy3Row++;
             if((enemy3Col == playerCol) && (enemy3Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy3Row - 1][enemy3Col] = 'W';
                 enemy3Row = 0;
                 enemy3Col = 8;
                 board[enemy3Row][enemy3Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy3Row - 1][enemy3Col] = 'W';
+                    enemy3Row = 0;
+                    enemy3Col = 8;
+                    board[enemy3Row][enemy3Col] = 'P';
+                }
             }
             else{
                 board[enemy3Row][enemy3Col] = 'P';
@@ -351,12 +460,21 @@ private boolean secret = false;
         if(enemy4Col > playerCol){ //Enemy4 movement
             enemy4Col--;
             if((enemy4Col == playerCol) && (enemy4Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy4Row][enemy4Col + 1] = 'W';
                 enemy4Row = 8;
                 enemy4Col = 8;
                 board[enemy4Row][enemy4Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy4Row][enemy4Col + 1] = 'W';
+                    enemy4Row = 8;
+                    enemy4Col = 8;
+                    board[enemy4Row][enemy4Col] = 'P';
+                }
             }
             else{
                 board[enemy4Row][enemy4Col] = 'P';
@@ -368,12 +486,21 @@ private boolean secret = false;
         else if(enemy4Col < playerCol){
             enemy4Col++;
             if((enemy4Col == playerCol) && (enemy4Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy4Row][enemy4Col - 1] = 'W';
                 enemy4Row = 8;
                 enemy4Col = 8;
                 board[enemy4Row][enemy4Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy4Row][enemy4Col - 1] = 'W';
+                    enemy4Row = 8;
+                    enemy4Col = 8;
+                    board[enemy4Row][enemy4Col] = 'P';
+                }
             }
             else{
                 board[enemy4Row][enemy4Col] = 'P';
@@ -385,12 +512,21 @@ private boolean secret = false;
         if(enemy4Row > playerRow){
             enemy4Row --;
             if((enemy4Col == playerCol) && (enemy4Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy4Row + 1][enemy4Col] = 'W';
                 enemy4Row = 8;
                 enemy4Col = 8;
                 board[enemy4Row][enemy4Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy4Row + 1][enemy4Col] = 'W';
+                    enemy4Row = 8;
+                    enemy4Col = 8;
+                    board[enemy4Row][enemy4Col] = 'P';
+                }
             }
             else{
                 board[enemy4Row][enemy4Col] = 'P';
@@ -402,12 +538,21 @@ private boolean secret = false;
         else if(enemy4Row < playerRow){
             enemy4Row++;
             if((enemy4Col == playerCol) && (enemy4Row == playerRow)){
+                if(touched == false){
+                touched = true;
                 recursionText(0, "Whats this?");
                 board[enemy4Row - 1][enemy4Col] = 'W';
                 enemy4Row = 8;
                 enemy4Col = 8;
                 board[enemy4Row][enemy4Col] = 'P';
                 randomEvent();
+                }
+                else{
+                    board[enemy4Row - 1][enemy4Col] = 'W';
+                    enemy4Row = 8;
+                    enemy4Col = 8;
+                    board[enemy4Row][enemy4Col] = 'P';
+                }
             }
             else{
                 board[enemy4Row][enemy4Col] = 'P';
@@ -415,12 +560,14 @@ private boolean secret = false;
             }
             printBoard();
         }
+        touched = false;
     }
         System.out.println("\033[H\033[2J" + bufferText); //Clears text
         printBoard(); //Prints board after move
         }
         //Endings
         Endings end = new Endings(); //Goes to proper ending once health is 0
+        BattlePass elonMa = Events.elonMa;
         if(player.getPlayerScore() < 0){
             end.badEnding();
         }
@@ -430,7 +577,7 @@ private boolean secret = false;
         else if (player.getPlayerScore() > 5){
             end.goodEnding();
         }
-        else if (player.getPlayerScore() > 5 && secret == true){
+        else if (player.getPlayerScore() > 5 && player.getSecret() && elonMa.hasBattlePass()){
             end.secretEnding();
         }
     }
@@ -463,11 +610,12 @@ private boolean secret = false;
             event.mrBeast();
         }         
         else if(randomEvent == 6 || randomEvent == 7 || randomEvent == 8 || randomEvent == 9 || randomEvent == 10){
-            System.out.println("Nothing happens");
+            recursionText(0,"Nothing happens");
             int secretChance = (int) (Math.random()*1000 + 1);
             if (secretChance == 387){
-                System.out.println("Wait. You find a portrait of Jonah Wolk. Maybe this can be used later");
-                secret = true;
+                Player player = Walker.player;
+                recursionText(0,"Wait. You find a portrait of Jonah Wolk. Maybe this can be used later");
+                player.setPortrait(true);
                 System.out.println("\033[H\033[2J"); //Clears text
             }
         } 
