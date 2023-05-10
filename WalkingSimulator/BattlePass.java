@@ -16,14 +16,14 @@ public class BattlePass extends Monetization{
         Player player = Walker.player;
         Scanner sc = new Scanner(System.in);
         recursionText(0,"Would you like to purchase the Battle Pass for $9.99? y/n");
-        if(sc.next().equals("y")){
+        String choice = sc.next();
+        if(choice.equals("y")){
             hasBattlePass = true;
             player.addPlayerScore();
         }
         else{
             hasBattlePass = false;
         }
-        sc.close();
     }
     public boolean hasBattlePass(){
         return hasBattlePass;

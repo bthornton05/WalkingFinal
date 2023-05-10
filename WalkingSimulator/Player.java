@@ -1,7 +1,7 @@
 package WalkingSimulator;
 
 public class Player {
-    private static int playerHealth = 10; //Sets player values
+    private static int playerHealth = 5; //Sets player values
     private static int playerScore = 0;
     private static boolean secret = false;
     public boolean portrait = false;
@@ -19,10 +19,10 @@ public class Player {
         return playerScore;
     }
     public void addPlayerScore(){
-        playerHealth ++;
+        playerScore ++;
     }
     public void subtractPlayerScore(){
-        playerHealth--;
+        playerScore--;
     }
     public boolean getSecret(){
         return secret;

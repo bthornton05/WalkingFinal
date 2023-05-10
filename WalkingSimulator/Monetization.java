@@ -21,9 +21,8 @@ public class Monetization extends textScroller{
         recursionText(0,"Thank you, your information is: ");
         recursionText(0,"Number: " + creditCardNumber);
         recursionText(0,"Expiration Date: " + expDate);
-        recursionText(0, + "CCV: " + ccv);
+        recursionText(0, "CCV: " + ccv);
         recursionText(0,"Your mother's maiden name is " + name);
-        sc.close();
     }
     public int getCCC(){
         return creditCardNumber;
